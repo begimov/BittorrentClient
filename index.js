@@ -6,4 +6,6 @@ const bencode = require('bencode');
 
 const torrent = bencode.decode(fs.readFileSync('test.torrent'));
 
-console.log(torrent.announce.toString('utf-8'));
+const tracker = require('./tracker.js');
+
+console.log(tracker.getPeers());
